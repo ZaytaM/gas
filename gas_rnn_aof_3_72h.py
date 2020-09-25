@@ -261,7 +261,7 @@ I also left tup with 100 epoch with 8 of batchsize + 100 with 64, this is barell
 
 for squareP in [False]:
     for last in [int(sys.argv[1])]: #[2,3,5]:
-        for noise1 in [0.01] #[0.01,0.05,0.1]:
+        for noise1 in [0.01]: #[0.01,0.05,0.1]:
             for train_percent in [0.6,0.7,0.8]:
                 for reg2 in [0.01,0.05,0.1,0.5]:
                     for layer_size in [8,16,24]:
