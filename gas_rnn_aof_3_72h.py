@@ -258,6 +258,7 @@ There are also other hyperparameter wich i didnt include here, most notably the 
 I also left tup with 100 epoch with 8 of batchsize + 100 with 64, this is barelly enough to achieve convergence, so results may be subpar
 """
 
+path="/home/math1656/gas/gas/"
 
 for squareP in [False]:
     for last in [int(sys.argv[1])]: #[2,3,5]:
@@ -282,7 +283,7 @@ for squareP in [False]:
                             np.random.seed(seed)
 
                             #Reading dataset as an array
-                            a=pd.read_csv("data/gas_im_extendido_1.txt",sep=" ")
+                            a=pd.read_csv(path+"data/gas_im_extendido_1.txt",sep=" ")
                             #a=pd.read_csv("data/gas_terceiro_caso_interpolado.txt",sep=" ",usecols=[0,1,2])
                             a=a.to_numpy()
 
@@ -419,7 +420,7 @@ for squareP in [False]:
 
                             #-------------------Predictions---------------------------
                             #From now on we will make dynamic predictions using the result from previous predictions
-                            a=pd.read_csv("data/gas_im_extendido_1.txt",sep=" ")
+                            a=pd.read_csv(path+"data/gas_im_extendido_1.txt",sep=" ")
                             #a=pd.read_csv("data/gas_quinto_caso_alterado.txt",sep=" ")
                             a=a.to_numpy()
                             a=sampling(a,tr1,tr2)
@@ -500,7 +501,7 @@ for squareP in [False]:
                                 plt.ylabel("Presssure")
                                 plt.show()
 
-                        with open("results.txt",'a') as arq:
+                        with open(path+"results.txt",'a') as arq:
                             s=";"+str(np.mean(result_runs[0]))
                             s+=";"+str(np.mean(result_runs[1]))
                             s+=";"+str(np.mean(result_runs[2]))
