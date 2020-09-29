@@ -261,13 +261,13 @@ I also left tup with 100 epoch with 8 of batchsize + 100 with 64, this is barell
 path="/home/math1656/gas/gas/"
 
 for squareP in [False]:
-    for last in [int(sys.argv[1])]: #[2,3,5]:
+    for last in [2]: #[2,3,5]:
         for noise1 in [0.01]: #[0.01,0.05,0.1]:
-            for train_percent in [0.6,0.7,0.8]:
-                for reg2 in [0.01,0.05,0.1,0.5]:
-                    for layer_size in [8,16,24]:
+            for train_percent in [0.5,0.6,0.7,0.8]:
+                for reg1 in [0.01,0.05,0.1]:
+                    for layer_size in [16,24]:
                         result_runs=[[],[],[],[]]
-                        tup=[[200,8],[200,64]]
+                        tup=[[int(sys.argv[1]),8]]
                         #for tup in [[100,8],[100,64]]:
                         print(" ")
                         for seed in range(10): #number of runs per hyperparameter set
@@ -351,8 +351,8 @@ for squareP in [False]:
 
                             #layer_size=16
 
-                            reg1=0.00
-                            #reg2=0.05
+                            # reg1=0.00
+                            reg2=0.01
 
                             model = keras.Sequential()
                             model.add(keras.layers.GRU(layer_size, kernel_regularizer=keras.regularizers.l1_l2(reg1,reg2),
