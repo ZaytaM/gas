@@ -520,6 +520,8 @@ for squareP in [False]:
                             s+=";"+str([x[1] for x in tup])
                             s+=";"+str(int(squareP))
                             s+=";"+str(last)
+                            s+=";"+str(np.var(result_runs[3]))
+                            s+=";"+str(np.median(result_runs[3]))
 
                             s=str(abs(hash(s)))+s
 
