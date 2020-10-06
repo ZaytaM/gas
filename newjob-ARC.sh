@@ -41,7 +41,7 @@ which_venv=tensor-env
 path=$(pwd)
 job_logs=${path}/logs
 job_path=${path}/jobs
-job_suffix="-train"
+job_suffix="job"
 
 # GET LATEST PREFIX AND INCREMENT IT
 job_prefix=0
