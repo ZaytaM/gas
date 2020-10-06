@@ -44,7 +44,7 @@ job_path=${path}/jobs
 job_suffix="job"
 
 # GET LATEST PREFIX AND INCREMENT IT
-job_prefix=0
+job_prefix=10
 for i in ${job_path}/*.sh
 do
 	job_prefix=$(basename $i "job.sh" | cut -f1 -d- )
