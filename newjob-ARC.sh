@@ -90,5 +90,5 @@ printf "%s %s %s\n" "module" "load" "${conda}" >> $j
 printf "%s %s %s\n"    "source" "activate" "/data/math-gan-pdes/math1656/${which_venv}" >> $j
 
 # RUN SCRIPT
-printf "%s %s %s\n" "python" "${script_path}" "$job_prefix" >> $j
+printf "%s %s %s\n" "python" "${script_path}" "$2" >> $j
 echo "Finished making job: $j $walltime"
