@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Jul 14 02:06:36 2020
-
 @author: hsegh
 """
 import matplotlib.pyplot as plt
@@ -260,9 +259,11 @@ I also left tup with 100 epoch with 8 of batchsize + 100 with 64, this is barell
 
 path="/home/math1656/gas/gas/"
 
+
 for squareP in [False]:
     for last in [2]: #[2,3,5]:
         for noise1 in [0.01]: #[0.01,0.05,0.1]:
+
             for train_percent in [0.5,0.6,0.7,0.8]:
                 for reg1 in [0,0.001,0.005]:
                     for layer_size in [16,24]:
@@ -356,7 +357,8 @@ for squareP in [False]:
 
                             model = keras.Sequential()
                             model.add(keras.layers.GRU(layer_size, kernel_regularizer=keras.regularizers.l1_l2(reg1,reg2),
-                                                       input_shape=(train_data_norm.shape[1], train_data_norm.shape[2])))
+                                                       input_shape=(train_data_norm.shape[1], train_data_norm.shape[2])),
+                                                       bias_regularizer=keras.regularizers.l1_l2(reg1,reg2))
                             #model.add(keras.layers.Flatten(input_shape=(train_data_norm.shape[1], train_data_norm.shape[2])))
                             #model.add(keras.layers.Dense(layer_size,activation="tanh"))
                             #model.add(keras.layers.Dense(layer_size,activation="tanh"))
