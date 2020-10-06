@@ -356,8 +356,8 @@ for squareP in [False]:
 
                             model = keras.Sequential()
                             model.add(keras.layers.GRU(layer_size, kernel_regularizer=keras.regularizers.l1_l2(reg1,reg2),
-                                                       input_shape=(train_data_norm.shape[1], train_data_norm.shape[2])),
-                                                       bias_regularizer=keras.regularizers.l1_l2(reg1,reg2))
+                                                        bias_regularizer=keras.regularizers.l1_l2(reg1,reg2),
+                                                       input_shape=(train_data_norm.shape[1], train_data_norm.shape[2]))                                                       )
                             #model.add(keras.layers.Flatten(input_shape=(train_data_norm.shape[1], train_data_norm.shape[2])))
                             #model.add(keras.layers.Dense(layer_size,activation="tanh"))
                             #model.add(keras.layers.Dense(layer_size,activation="tanh"))
