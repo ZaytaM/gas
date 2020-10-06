@@ -263,10 +263,9 @@ path="/home/math1656/gas/gas/"
 for squareP in [False]:
     for last in [2]: #[2,3,5]:
         for noise1 in [0.01]: #[0.01,0.05,0.1]:
-
-            for train_percent in [0.5,0.6,0.7,0.8]:
-                for reg1 in [0,0.001,0.005]:
-                    for layer_size in [16,24]:
+            for train_percent in [0.65,0.7,0.75]:
+                for reg1 in [0,0.0005,0.001]:
+                    for layer_size in [20,25,30]:
                         result_runs=[[],[],[],[]]
                         tup=[[int(sys.argv[1]),8]]
                         #for tup in [[100,8],[100,64]]:
