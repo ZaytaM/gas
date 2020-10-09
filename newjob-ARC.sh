@@ -44,7 +44,7 @@ job_path=${path}/jobs
 job_suffix="job"
 
 # GET LATEST PREFIX AND INCREMENT IT
-job_prefix=10
+job_prefix=1
 for i in ${job_path}/*.sh
 do
 	job_prefix=$(basename $i "job.sh")
@@ -52,7 +52,7 @@ done
 job_prefix=$((job_prefix+=1))
 
 # PATHs
-job_name=$2${job_suffix}
+job_name=${job_prefix}${job_suffix}
 job_output=${job_name}
 script_path=${path}/${script}
 
@@ -90,5 +90,5 @@ printf "%s %s %s\n" "module" "load" "${conda}" >> $j
 printf "%s %s %s\n"    "source" "activate" "/data/math-gan-pdes/math1656/${which_venv}" >> $j
 
 # RUN SCRIPT
-printf "%s %s %s\n" "python" "${script_path}" "$3" >> $j
+printf "%s %s %s\n" "python" "${script_path}" "$2" >> $j
 echo "Finished making job: $j $walltime"
