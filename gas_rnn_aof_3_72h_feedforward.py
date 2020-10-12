@@ -359,8 +359,8 @@ for squareP in [False]:
                                 #                            input_shape=(train_data_norm.shape[1], train_data_norm.shape[2])),
                                 #                            bias_regularizer=keras.regularizers.l1_l2(reg1,reg2))
                                 model.add(keras.layers.Flatten(input_shape=(train_data_norm.shape[1], train_data_norm.shape[2])))
-                                model.add(keras.layers.Dense(layer_size,activation="relu",bias_regularizer=keras.regularizers.l1_l2(reg1,reg2),kernel_regularizer=keras.regularizers.l1_l2(reg1,reg2))
-                                model.add(keras.layers.Dense(layer_size,activation="relu",bias_regularizer=keras.regularizers.l1_l2(reg1,reg2),kernel_regularizer=keras.regularizers.l1_l2(reg1,reg2))
+                                model.add(keras.layers.Dense(layer_size,activation="relu",kernel_regularizer=keras.regularizers.l1_l2(reg1,reg2),bias_regularizer=keras.regularizers.l1_l2(reg1,reg2))
+                                model.add(keras.layers.Dense(layer_size,activation="relu",kernel_regularizer=keras.regularizers.l1_l2(reg1,reg2),bias_regularizer=keras.regularizers.l1_l2(reg1,reg2))
                                 model.add(keras.layers.Dense(1,kernel_regularizer=keras.regularizers.l2(reg2),
                                                  bias_regularizer=keras.regularizers.l1_l2(reg1,reg2)))
 
