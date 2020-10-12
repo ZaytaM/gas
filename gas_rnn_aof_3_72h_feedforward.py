@@ -351,6 +351,8 @@ for squareP in [False]:
 
                                 #layer_size=16
 
+
+
                                 # reg1=0.00
                                 reg2=0.01
 
