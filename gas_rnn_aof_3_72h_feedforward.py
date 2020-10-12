@@ -19,7 +19,7 @@ import sys
 class PrintDot(keras.callbacks.Callback): #Helps tracking progress in epochs during training
   def on_epoch_end(self, epoch, logs):
     if epoch % 1000 == 0: print('')
-    if epoch % 10 == 0: print('.', end='')
+    if epoch % 10 == 0: print('.')
 
 def sin_noise(x,intensity,frequency=3.1415): #sin noise
     for i in range(len(x)):
