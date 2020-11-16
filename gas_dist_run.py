@@ -88,7 +88,7 @@ reg2 = 0.0
 shape=(data_shaped.shape[1], data_shaped.shape[2])
 
 
-# for reg2 in [int(sys.argv[0])]:
+# for reg2 in [int(sys.argv[1])]:
 for reg2 in [0,1,2,10]:
     for layer_size in [16]:
         for epochs in [[150],[200],[250],[300]]:
